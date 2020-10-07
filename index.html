@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hanna Instruments - CRM</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="side-nav-icon">
+                <p class="line"></p>
+                <p class="line"></p>
+                <p class="line"></p>
+            </div>
+            <a href="#" class="profile-icon">
+                <div class="user-icon">U</div>
+                <p>Profilom</p>
+            </a>
+    
+            <ul>
+                <li class="nav-item active"><a href="#" class="nav-link">Ügyfelek</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Vásárlások</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Felhasználók</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Riportok</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Szerviz</a></li>
+            </ul>
+        </nav>
+    
+        <main>
+            <header>
+                <button class="btn btn-circle btn-accient">+</button>
+                <input type="search" name="search" id="search" placeholder="Kereséshez kezdj el begépelni nevet/cég nevet/ várost">
+                <div class="view-controlleres">
+                    <small>Nézet</small>
+                    <button class="btn small btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"/></svg>
+                    </button>
+                    <button class="btn small btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                    </button>
+                </div>
+            </header>
+    
+            <section>
+                <div class="pagination">
+                    <button class="btn btn-primary">Előző</button>
+                    <p class="pagination-counter">1 / 6</p>
+                    <button class="btn btn-primary">Következő</button>
+                    <select name="itemPerPage" id="itemPerPage">
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="48">48</option>
+                    </select>
+                </div>
+    
+                <div class="card-deck">
+                    <article class="card">
+                        <div class="card-header">
+                            <p class="quality-icon">A</p>
+                            <h3 class="company-title">Teszt Kft.</h3>
+                            <p class="company-address">Csongrád / Szeged</p>
+                        </div>
+                       
+                        <ul class="card-main">
+                            <li>Kiss Irén</li>
+                            <li>Laborvezető</li>
+                            <li>kiss.iren@teszt.hu</li>
+                            <li>+36-70-456-1236</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <p class="quality-icon">B</p>
+                            <h3 class="company-title">Teszt 2 Kft.</h3>
+                            <p class="company-address">Pest / Budapest</p>
+                        </div>
+                       
+                        <ul class="card-main">
+                            <li>Nagy László</li>
+                            <li>Ügyvezető</li>
+                            <li>nagy.l@teszt2.com</li>
+                            <li>+36-70-456-1236</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <p class="quality-icon">C</p>
+                            <h3 class="company-title">Teszt 3 Kft.</h3>
+                            <p class="company-address">Bács-Kiskun / Baja</p>
+                        </div>
+                       
+                        <ul class="card-main">
+                            <li>Kovács Ilona</li>
+                            <li>Laboros</li>
+                            <li>k.ilona@gmail.com</li>
+                            <li>+36-70-456-1236</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

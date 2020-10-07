@@ -1,0 +1,78 @@
+@import 'colors';
+$small-border-radius: 5px;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.form-group {
+    margin: 34px 0;
+
+    input {
+        display: block;
+        border: 1px solid $primary-color;
+        border-radius: $small-border-radius;
+        padding: 5px;
+    }
+}
+
+.btn {
+    width: 150px;
+    padding: 10px 5px;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform .3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+    &:active {
+        transform: translate(0);
+    }
+
+    &.btn-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 150px;
+        font-size: 2rem;
+        padding: 0;
+    }
+    &.small {
+        width: 50px;
+        height: auto;
+    }
+
+    &.btn-accient {
+        border-color: $accient-color;
+        background-color: $accient-color;
+        color: $white;
+    }
+    &.btn-primary {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: $white;
+    }
+}
+
+.error-message {
+    background-color: $danger-color;
+    color: $white;
+    padding: 10px 0;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+@import 'login';
+@import 'customer';

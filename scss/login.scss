@@ -1,0 +1,35 @@
+@import 'colors';
+
+.login-main {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/login-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    form {
+        width: 500px;
+        height: 400px;
+        background-color: $primary-color;
+        border-radius: 5px;
+        padding: 30px 60px;
+        text-align: center;
+        color: white;
+
+        .logo {
+            display: block;
+            width: 150px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        input {
+            margin: 0 auto;
+        }
+
+    }
+}
