@@ -36,10 +36,10 @@
                 <input type="search" name="search" id="search" placeholder="Kereséshez kezdj el begépelni nevet/cég nevet/ várost">
                 <div class="view-controlleres">
                     <small>Nézet</small>
-                    <button class="btn small btn-primary">
+                    <button class="btn small btn-primary active" id="cardView">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"/></svg>
                     </button>
-                    <button class="btn small btn-primary">
+                    <button class="btn small btn-primary" id="listView">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
                     </button>
                 </div>
@@ -57,7 +57,7 @@
                     </select>
                 </div>
     
-                <div class="card-deck">
+                <div id="customersWrapper" class="active">
                     <article class="card">
                         <div class="card-header">
                             <p class="quality-icon">A</p>
@@ -103,9 +103,40 @@
                         </ul>
                     </article>
                 </div>
+
+                <div class="active-customer-tab">
+                    <button class="more-action-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </button>
+                    <p class="quality-icon">A</p>
+                   
+                    <ul class="company-infos">
+                        <li>Teszt Kft.</li>
+                        <li>Élelmiszeripar</li>
+                        <li>Csongrád megye</li>
+                        <li>Szeged, Felső-kikötő sor 11/B</li>
+                    </ul>
+
+                    <ul class="contact-infos">
+                        <li>Kiss Irén</li>
+                        <li>Laborvezető</li>
+                        <li>kiss.iren@teszt.hu</li>
+                        <li>+36-70-456-1236</li>
+                    </ul>
+
+                    <ul class="other-infos">
+                        <li>Céges telefon</li>
+                        <li>Cég weboldala</li>
+                        <li>Cég social oldala</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam perspiciatis, voluptate amet, hic illo debitis, omnis odit numquam illum a maiores rem aperiam! Iure exercitationem quidem a repudiandae sapiente.</li>
+                    </ul>
+                   
+                </div>
             </section>
         </main>
     </div>
 
+
+    <script src="js/main.js"></script>
 </body>
 </html>
