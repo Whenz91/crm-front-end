@@ -9,6 +9,7 @@ $small-border-radius: 5px;
 body {
     margin: 0;
     padding: 0;
+    position: relative;
 }
 a {
     text-decoration: none;
@@ -16,11 +17,17 @@ a {
 .form-group {
     margin: 34px 0;
 
-    input {
+    input,
+    select,
+    textarea {
         display: block;
         border: 1px solid $primary-color;
         border-radius: $small-border-radius;
         padding: 5px;
+    }
+
+    input[type="radio"] {
+        display: inline-block;
     }
 }
 
@@ -63,6 +70,7 @@ a {
 
         &.active {
             background-color: $white;
+            color: $primary-color;
 
             svg {
                 fill: $primary-color;

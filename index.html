@@ -9,7 +9,7 @@
     <title>Hanna Instruments - CRM</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="page-content-wrapper">
         <nav>
             <div class="side-nav-icon">
                 <p class="line"></p>
@@ -32,8 +32,10 @@
     
         <main>
             <header>
-                <button class="btn btn-circle btn-accient">+</button>
+                <button id="addCustomerBtn" class="btn btn-circle btn-accient">+</button>
+
                 <input type="search" name="search" id="search" placeholder="Kereséshez kezdj el begépelni nevet/cég nevet/ várost">
+                
                 <div class="view-controlleres">
                     <small>Nézet</small>
                     <button class="btn small btn-primary active" id="cardView">
@@ -44,27 +46,27 @@
                     </button>
                 </div>
             </header>
-    
-            <section>
-                <div class="pagination">
-                    <button class="btn btn-primary">Előző</button>
-                    <p class="pagination-counter">1 / 6</p>
-                    <button class="btn btn-primary">Következő</button>
-                    <select name="itemPerPage" id="itemPerPage">
-                        <option value="12">12</option>
-                        <option value="24">24</option>
-                        <option value="48">48</option>
-                    </select>
-                </div>
-    
-                <div id="customersWrapper" class="active">
+            
+            <section class="pagination">
+                <button class="btn btn-primary">Előző</button>
+                <p class="pagination-counter">1 / 6</p>
+                <button class="btn btn-primary">Következő</button>
+                <select name="itemPerPage" id="itemPerPage">
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="48">48</option>
+                </select>
+            </section>
+
+            <section class="wrapper">
+                <div id="customersWrapper">
                     <article class="card">
                         <div class="card-header">
                             <p class="quality-icon">A</p>
                             <h3 class="company-title">Teszt Kft.</h3>
                             <p class="company-address">Csongrád / Szeged</p>
                         </div>
-                       
+                        
                         <ul class="card-main">
                             <li>Kiss Irén</li>
                             <li>Laborvezető</li>
@@ -72,14 +74,14 @@
                             <li>+36-70-456-1236</li>
                         </ul>
                     </article>
-
+    
                     <article class="card">
                         <div class="card-header">
                             <p class="quality-icon">B</p>
                             <h3 class="company-title">Teszt 2 Kft.</h3>
                             <p class="company-address">Pest / Budapest</p>
                         </div>
-                       
+                        
                         <ul class="card-main">
                             <li>Nagy László</li>
                             <li>Ügyvezető</li>
@@ -87,14 +89,14 @@
                             <li>+36-70-456-1236</li>
                         </ul>
                     </article>
-
+    
                     <article class="card">
                         <div class="card-header">
                             <p class="quality-icon">C</p>
                             <h3 class="company-title">Teszt 3 Kft.</h3>
                             <p class="company-address">Bács-Kiskun / Baja</p>
                         </div>
-                       
+                        
                         <ul class="card-main">
                             <li>Kovács Ilona</li>
                             <li>Laboros</li>
@@ -108,8 +110,17 @@
                     <button class="more-action-button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                     </button>
+                    <div class="buttons-wrapper">
+                        <button class="edit-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                        </button>
+                        <button class="delete-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                        </button>
+                    </div>
+
                     <p class="quality-icon">A</p>
-                   
+                    
                     <ul class="company-infos">
                         <li>Teszt Kft.</li>
                         <li>Élelmiszeripar</li>
@@ -125,16 +136,149 @@
                     </ul>
 
                     <ul class="other-infos">
+                        <li>Egyéb céges infok:</li>
                         <li>Céges telefon</li>
-                        <li>Cég weboldala</li>
-                        <li>Cég social oldala</li>
+                        <li><a href="#" target="_blank">Cég weboldala</a></li>
+                        <li><a href="#" target="_blank">Cég social oldala</a></li>
                         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam perspiciatis, voluptate amet, hic illo debitis, omnis odit numquam illum a maiores rem aperiam! Iure exercitationem quidem a repudiandae sapiente.</li>
                     </ul>
-                   
+
+                    <div class="tab-nav">
+                        <button class="btn btn-primary active">Megkeresések</button>
+                        <button class="btn btn-primary">Rendelések</button>
+                    </div>
+
+                    
+                    <div class="tab-content">
+                        <button class="btn btn-circle btn-accient btn-add">+</button>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dátum</th>
+                                    <th>Megkeresés módja</th>
+                                    <th>Megkeresés leírása</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2020.09.18.</td>
+                                    <td>Telefon</td>
+                                    <td>Élelmiszeripari katalógus elküldve emailben.</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.09.29.</td>
+                                    <td>Telefonos</td>
+                                    <td>Műszer bemutató időpontjának egyeztetése.</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.10.02.</td>
+                                    <td>Személyes</td>
+                                    <td>Műszer bemutató a HI931-es titrátorral (sómérés).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </section>
+
         </main>
+        
+        <div class="modal">
+            
+            <form method="post">
+                <button id="close">X</button>
+    
+                <div class="form-group a">
+                    <label for="company-name">Cég neve</label>
+                    <input type="text" name="company-name">
+                </div>
+    
+                <div class="form-group b">
+                    <label for="">A cég belső minősítése</label>
+                    <br>
+                    <br>
+                    <input type="radio" name="a" id="">
+                    <label for="a">A - jó</label>
+    
+                    <input type="radio" name="b" id="">
+                    <label for="b">B - elmegy</label>
+    
+                    <input type="radio" name="c" id="">
+                    <label for="c">C - rossz</label>
+                </div>
+    
+                <div class="form-group c">
+                    <label for="industry">Iparág</label>
+                    <select name="industry" id="">
+                        <option value="1">Élelmiszeripar</option>
+                        <option value="2">Vízkezelés</option>
+                    </select>
+                </div>
+    
+                <div class="form-group d">
+                    <label for="county">Megye</label>
+                    <select name="county" id="">
+                        <option value="1">Budapest</option>
+                        <option value="2">Békés</option>
+                    </select>
+                </div>
+    
+                <div class="form-group e">
+                    <label for="city">Város</label>
+                    <input type="text" name="city">
+                </div>
+    
+                <div class="form-group f">
+                    <label for="street">Utca és házszám</label>
+                    <input type="text" name="street">
+                </div>
+    
+                <div class="form-group g">
+                    <label for="phone">Telefonszám</label>
+                    <input type="text" name="phone">
+                </div>
+    
+                <div class="form-group h">
+                    <label for="webpage">Weboldal</label>
+                    <input type="text" name="webpage">
+                </div>
+    
+                <div class="form-group j">
+                    <label for="social-page">Social oldal</label>
+                    <input type="text" name="social-page">
+                </div>
+            
+                <div class="form-group k">
+                    <label for="name">Kontakt személy neve</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group l">
+                    <label for="tile">Beozstás</label>
+                    <input type="text" name="tile">
+                </div>
+                <div class="form-group m">
+                    <label for="email">Email cím</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="form-group n">
+                    <label for="phone">Telefonszám</label>
+                    <input type="text" name="phone">
+                </div>
+    
+                <div class="form-group o">
+                    <label for="comment">Megjegyzés</label>
+                    <textarea name="comment" id="" cols="30" rows="15"></textarea>
+                </div>
+               
+                <div class="btn-group p">
+                    <button class="btn btn-primary">Mentés</button>
+                    <button class="btn btn-primary active">Mégse</button>
+                </div>
+            </form>
+        </div>
     </div>
+    
 
 
     <script src="js/main.js"></script>

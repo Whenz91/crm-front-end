@@ -1,6 +1,7 @@
 @import 'colors';
 
-.wrapper {
+.page-content-wrapper {
+    position: relative;
     display: flex;
 }
 nav {
@@ -99,38 +100,41 @@ main {
         }
     }
 
-    section {
-        .pagination {
-            display: flex;
-            width: 100%;
-            margin: 30px 0;
-    
-            button {
-                margin-right: 15px;
-            }
-            p {
-                margin-right: 15px;
-                color: gray;
-            }
-            select {
-                width: 50px;
-                border: 2px solid $primary-color;
-                border-radius: 5px;
-                color: gray;
-            }
+    .pagination {
+        display: flex;
+        width: 100%;
+        margin: 30px 0 50px;
+
+        button {
+            margin-right: 15px;
         }
+        p {
+            margin-right: 15px;
+            color: gray;
+        }
+        select {
+            width: 50px;
+            border: 2px solid $primary-color;
+            border-radius: 5px;
+            color: gray;
+        }
+    }
 
-        .card-deck {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            margin-top: 50px;
-
-            &.active {
+    .wrapper {
+        &.active {
+            display: flex;
+            .card-deck {
                 max-width: 300px;
                 grid-template-columns: 1fr;
                 grid-gap: 30px;
             }
+        }
 
+
+        .card-deck {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+    
             .card {
                 margin: 0 auto;
                 min-width: 250px;
@@ -139,23 +143,15 @@ main {
                 background-color: $white;
                 border-radius: 5px;
                 padding: 15px;
-
+    
                 .card-header {
                     display: grid;
                     grid-column-gap: 10px;
                     align-items: center;
-
+    
                     .quality-icon {
                         grid-column: 1 / 2;
                         grid-row: 1 / 3;
-                        font-size: 2rem;
-                        background-color: $primary-color;
-                        color: $white;
-                        text-align: center;
-                        padding: 0 5px;
-                        margin: 0;
-                        border-radius: 5px;
-
                     }
                     .company-title {
                         margin: 0;
@@ -169,19 +165,19 @@ main {
                         font-size: 0.8rem;
                     }
                 }
-
+    
                 .card-main {
                     list-style: none;
                     margin: 20px 0;
                     padding: 0;
-
+    
                     li {
                         line-height: 1.5rem;
                     }
                 }
             }
         }
-
+    
         .card-list {
             .card {
                 display: flex;
@@ -193,11 +189,11 @@ main {
                 background-color: $white;
                 border-radius: 5px;
                 padding: 15px;
-
+    
                 .card-header {
                     display: flex;
                     align-items: center;
-
+    
                     .quality-icon {
                         font-size: 2rem;
                         background-color: $primary-color;
@@ -206,7 +202,7 @@ main {
                         padding: 0 5px;
                         margin: 0 15px 0 0;
                         border-radius: 5px;
-
+    
                     }
                     .company-title {
                         margin: 0 15px 0 0;
@@ -216,19 +212,279 @@ main {
                         font-weight: 300;
                     }
                 }
-
+    
                 .card-main {
                     list-style: none;
                     margin: 20px 0;
                     padding: 0;
-
+    
                     li {
                         display: inline-block;
                         margin-right: 15px;
                     }
                 }
             }
+    
+        }
 
+        .active-customer-tab {
+           background-color: $white;
+           border: 2px solid $primary-color;
+           border-radius: 5px;
+           margin-left: 30px;
+           padding: 15px;
+           position: relative;
+           display: none;
+           grid-template-columns: 50px repeat(2, 1fr);
+           grid-template-rows: repeat(4, max-content);
+           grid-gap: 15px;
+
+           &.active {
+               display: grid;
+           }
+        
+           .more-action-button {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                outline: none;
+
+                svg {
+                    fill: $accient-color;
+                    width: 30px;
+                    height: 30px;
+                }
+           }
+           .buttons-wrapper {
+               visibility: hidden;
+               position: absolute;
+               top: 50px;
+               right: 10px;
+               border: 1px solid $accient-color;
+               border-radius: 150px;
+               width: 50px;
+               min-height: 100px;
+               display: grid;
+               justify-content: center;
+               align-items: center;
+               transition: all .3s ease-in-out;
+
+               &.active {
+                   visibility: visible;
+                   transform: translateY(5px);
+               }
+
+               button {
+                   border: 1px solid $accient-color;
+                   display: block;
+                   border-radius: 150px;
+                   padding: 5px 7px;
+                   margin: 15px;
+
+                   &.edit-btn {
+                       background-color: $accient-color;
+                       svg {
+                           fill: $white;
+                       }
+                   }
+                   &.delete-btn {
+                       background-color: transparent;
+                       svg {
+                           fill: $accient-color;
+                       }
+                   }
+               }
+           }
+
+           .quality-icon {
+                grid-column: 1/ 2;
+                grid-row: 1 / 2;
+                width: 50px;
+                height: 50px;
+            }
+           .company-infos {
+                grid-column: 2 / 3;
+                grid-auto-rows: 1 / 2;
+           }
+           .contact-infos {
+                grid-column: 3 / 4;
+                grid-auto-rows: 1 / 2;
+           }
+           .other-infos {
+               grid-column: 1 / 4;
+               grid-row: 2 / 3;
+           }
+           .tab-nav {
+                grid-column: 1 / 4;
+                grid-row: 3 / 4;
+           }
+           .tab-content {
+                grid-column: 1 / 4;
+                grid-row: 4 / 5;
+                position: relative;
+
+                .btn-add {
+                    position: absolute;
+                    top: -30px;
+                    right: 10px;
+                }
+           }
+
+           ul {
+                list-style: none;
+
+                li {
+                    margin-bottom: 5px;
+                }
+
+                li:first-child {
+                    font-size: 1.2rem;
+                }
+           }
         }
     }
+}
+
+.quality-icon {
+    font-size: 2rem;
+    background-color: $primary-color;
+    color: $white;
+    text-align: center;
+    padding: 0 5px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+thead {
+    background-color: $light-gray;
+    text-align: left;
+    tr {
+        th {
+            padding: 10px 5px;
+        }
+    }
+}
+tbody {
+    tr {
+        td {
+            padding: 10px 5px;
+        }
+    }
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+
+    &.active {
+        display: block;
+    }
+
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        width: 90%;
+        padding: 15px;
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(8, max-content);
+
+        #close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 1px solid $primary-color;
+            background-color: transparent;
+            color: $primary-color;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        grid-template-areas: 
+        "a b b"
+        "c . ."
+        "d e f"
+        "g h j"
+        "k . o"
+        "l . o"
+        "m n o"
+        "p p p";
+
+        .form-group {
+            margin: 10px 0;
+            label {
+                color: $primary-color;
+            }
+            input {
+                width: 250px;
+            }
+            input[type="radio"] {
+                width: initial;
+            }
+            
+        }
+        
+    }
+}
+.a {
+    grid-area: a;
+}
+.b {
+    grid-area: b;
+}
+.c {
+    grid-area: c;
+}
+.d {
+    grid-area: d;
+}
+.e {
+    grid-area: e;
+}
+.f {
+    grid-area: f;
+}
+.g {
+    grid-area: g;
+}
+.h {
+    grid-area: h;
+}
+.j {
+    grid-area: j;
+}
+.k {
+    grid-area: k;
+}
+.l {
+    grid-area: l;
+}
+.m {
+    grid-area: m;
+}
+.n {
+    grid-area: n;
+}
+.o {
+    grid-area: o;
+}
+.p {
+    grid-area: p;
+    text-align: center;
 }
